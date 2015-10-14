@@ -21,7 +21,7 @@ namespace Aula01
                 {
                     if (tentativas == 10)
                     {
-                        Console.WriteLine("Ganhaste logo ha primeira!!!");
+                        Console.WriteLine("Ganhaste logo há primeira!!!");
                         tentativas = tentativas - 10;
                         Console.WriteLine();
                     }
@@ -45,7 +45,7 @@ namespace Aula01
                         if (tentativas >= 1)
                         {
                             Console.WriteLine("O numero procurado é inferior!Tens " + pontos + " pontos " + "e " + tentativas + " tentativas restantes");
-                            Console.WriteLine("O numero que o computador escolheu está entre os numeros "+ minima+ " e "+ maxima);
+                            Console.WriteLine("O numero que o computador escolheu está entre os números "+ minima+ " e "+ maxima);
                             Console.WriteLine();
                         }
                         else
@@ -65,7 +65,7 @@ namespace Aula01
                         if (tentativas >= 1)
                         {
                             Console.WriteLine("O numero procurado é maior!!!Tens " + pontos + " pontos " + "e " + tentativas + " tentativas restantes");
-                            Console.WriteLine("O numero que o computador escolheu está entre os numeros "+ minima+ " e "+ maxima);
+                            Console.WriteLine("O numero que o computador escolheu está entre os números "+ minima+ " e "+ maxima);
                             Console.WriteLine();
                         }
                         else
