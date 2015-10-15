@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace Aula01
 {
@@ -6,18 +7,29 @@ namespace Aula01
     {
         static void Main(string[] args)
         {
-            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.Clear();
             Random aleatorio = new Random();
             int com = aleatorio.Next(1, 1000);
             int pontos = 1000;
             int tentativas = 10;
             int maxima = 1000;
             int minima = 1;
+            int user = 0;
             Console.WriteLine("O computador escolheu um numero aleatório entre {0} e {1}, qual acha que é?", minima, maxima);
             Console.WriteLine();
             while (tentativas > 0)
             {
-                int user = int.Parse(Console.ReadLine());
+                String userin = Console.ReadLine();
+                try
+                {
+                    user = Convert.ToInt32(userin);
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Isso não é um numero! Perdeste uma tentativa!");
+                    Console.WriteLine("");
+                }
                 if (user == com)
                 {
                     if (tentativas == 10)
