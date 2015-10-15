@@ -45,7 +45,7 @@ namespace Aula01
                         if (tentativas >= 1)
                         {
                             Console.WriteLine("O numero procurado é inferior!Tens {0} e {1} tentativas restantes." , pontos, tentativas);
-                            Console.WriteLine("O numero que o computador escolheu está entre os numeros {0} e {1}", minima, maxima);
+                            Console.WriteLine("O numero que o computador escolheu está entre os números {0} e {1}", minima, maxima);
                             Console.WriteLine();
                         }
                         else
@@ -64,8 +64,8 @@ namespace Aula01
                         pontos = pontos - 100;
                         if (tentativas >= 1)
                         {
-                            Console.WriteLine("O numero procurado é maior!!!Tens {0} e {1} tentativas restantes." , pontos, tentativasTens {0} e {1} tentativas restantes." , pontos, tentativas);
-                            Console.WriteLine("O numero que o computador escolheu está entre os numeros {0} e {1}", minima, maxima);
+                            Console.WriteLine("O numero procurado é maior!!!Tens {0} e {1} tentativas restantes." , pontos, tentativas);
+                            Console.WriteLine("O numero que o computador escolheu está entre os números {0} e {1}", minima, maxima);
                             Console.WriteLine();
                         }
                         else
