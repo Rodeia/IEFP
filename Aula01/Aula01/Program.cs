@@ -12,7 +12,7 @@ namespace Aula01
             int tentativas = 10;
             int maxima = 1000;
             int minima = 1;
-            Console.WriteLine("O computador escolheu um numero aleatório entre "+ minima +" e "+ maxima + " qual acha que é?");
+            Console.WriteLine("O computador escolheu um numero aleatório entre {0} e {1}, qual acha que é?", minima, maxima);
             Console.WriteLine();
             while (tentativas > 0)
             {
@@ -27,7 +27,7 @@ namespace Aula01
                     }
                     else
                     {
-                        Console.WriteLine("Ganhaste Com " + pontos + " pontos e " + tentativas + " tentativas restantes!");
+                        Console.WriteLine("Ganhaste Com {0} pontos e {1} tentativas restantes!", pontos, tentativas);
                         tentativas = tentativas - 10;
                         Console.WriteLine();
                     }
@@ -44,8 +44,8 @@ namespace Aula01
                         pontos = pontos - 100;
                         if (tentativas >= 1)
                         {
-                            Console.WriteLine("O numero procurado é inferior!Tens " + pontos + " pontos " + "e " + tentativas + " tentativas restantes");
-                            Console.WriteLine("O numero que o computador escolheu está entre os numeros "+ minima+ " e "+ maxima);
+                            Console.WriteLine("O numero procurado é inferior!Tens {0} e {1} tentativas restantes." , pontos, tentativas);
+                            Console.WriteLine("O numero que o computador escolheu está entre os numeros {0} e {1}", minima, maxima);
                             Console.WriteLine();
                         }
                         else
@@ -64,13 +64,13 @@ namespace Aula01
                         pontos = pontos - 100;
                         if (tentativas >= 1)
                         {
-                            Console.WriteLine("O numero procurado é maior!!!Tens " + pontos + " pontos " + "e " + tentativas + " tentativas restantes");
-                            Console.WriteLine("O numero que o computador escolheu está entre os numeros "+ minima+ " e "+ maxima);
+                            Console.WriteLine("O numero procurado é maior!!!Tens {0} e {1} tentativas restantes." , pontos, tentativasTens {0} e {1} tentativas restantes." , pontos, tentativas);
+                            Console.WriteLine("O numero que o computador escolheu está entre os numeros {0} e {1}", minima, maxima);
                             Console.WriteLine();
                         }
                         else
                         {
-                            Console.WriteLine("Perdeste , o numero certo era "+ com);
+                            Console.WriteLine("Perdeste , o numero certo era {0}", com);
                             Console.WriteLine();
                             Console.ReadLine();
                         }
