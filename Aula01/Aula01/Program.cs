@@ -6,6 +6,7 @@ namespace Aula01
     {
         static void Main(string[] args)
         {
+            Console.BackgroundColor = ConsoleColor.Blue;
             Random aleatorio = new Random();
             int com = aleatorio.Next(1, 1000);
             int pontos = 1000;
@@ -21,7 +22,7 @@ namespace Aula01
                 {
                     if (tentativas == 10)
                     {
-                        Console.WriteLine("Ganhaste logo ha primeira!!!");
+                        Console.WriteLine("Ganhaste logo há primeira!!!");
                         tentativas = tentativas - 10;
                         Console.WriteLine();
                     }
