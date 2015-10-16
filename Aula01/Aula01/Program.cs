@@ -10,85 +10,98 @@ namespace Aula01
             Console.BackgroundColor = ConsoleColor.DarkBlue;
             Console.Clear();
             Random aleatorio = new Random();
-            int com = aleatorio.Next(1, 1000);
-            int pontos = 1000;
-            int tentativas = 10;
-            int maxima = 1000;
-            int minima = 1;
-            int user = 0;
+            long com = aleatorio.Next(1, 1000);
+            long pontos = 1000;
+            long tentativas = 10;
+            long maxima = 1000;
+            long minima = 1;
+            long user = 0;
+            bool aux = false;
             Console.WriteLine("O computador escolheu um numero aleatório entre {0} e {1}, qual acha que é?", minima, maxima);
             Console.WriteLine();
-            while (tentativas > 0)
+        Start:
+            if (tentativas > 0)
             {
-                String userin = Console.ReadLine();
-                try
+                do
                 {
-                    user = Convert.ToInt32(userin);
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Isso não é um numero! Perdeste uma tentativa!");
-                    Console.WriteLine("");
-                }
-                if (user == com)
-                {
-                    if (tentativas == 10)
+                    do
                     {
-                        Console.WriteLine("Ganhaste logo há primeira!!!");
-                        tentativas = tentativas - 10;
-                        Console.WriteLine();
-                    }
-                    else
-                    {
-                        Console.WriteLine("Ganhaste Com {0} pontos e {1} tentativas restantes!", pontos, tentativas);
-                        tentativas = tentativas - 10;
-                        Console.WriteLine();
-                    }
-                }
-                else
-                {
-                    if (user > com)
-                    {
-                        if (user < maxima)
+                        if (aux == true)
                         {
-                            maxima = user;
+                            Console.WriteLine("Numero invalido! insere um numero entre 1 e 1000");
+                            Console.WriteLine("");
                         }
-                        tentativas = tentativas - 1;
-                        pontos = pontos - 100;
-                        if (tentativas >= 1)
+                    String userin = Console.ReadLine();
+                    try
+                    {
+                        user = long.Parse(userin);
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("Isso não é um numero!");
+                        Console.WriteLine();
+                        goto Start;
+                    }
+                        aux = true;
+                    } while (user <0 || user > 1000);
+                    aux = false;
+                    if (user == com)
+                    {
+                        if (tentativas == 10)
                         {
-                            Console.WriteLine("O numero procurado é inferior!Tens {0} e {1} tentativas restantes." , pontos, tentativas);
-                            Console.WriteLine("O numero que o computador escolheu está entre os números {0} e {1}", minima, maxima);
+                            Console.WriteLine("Ganhaste logo há primeira!!!");
                             Console.WriteLine();
                         }
                         else
                         {
-                            Console.WriteLine("Perdeste , o numero certo era "+ com);
+                            Console.WriteLine("Ganhaste Com {0} pontos e {1} tentativas restantes!", pontos, tentativas);
                             Console.WriteLine();
                         }
                     }
                     else
                     {
-                        if (user > minima)
+                        if (user > com)
                         {
-                            minima = user;
-                        }
-                        tentativas = tentativas - 1;
-                        pontos = pontos - 100;
-                        if (tentativas >= 1)
-                        {
-                            Console.WriteLine("O numero procurado é maior!!!Tens {0} e {1} tentativas restantes." , pontos, tentativas);
-                            Console.WriteLine("O numero que o computador escolheu está entre os números {0} e {1}", minima, maxima);
-                            Console.WriteLine();
+                            if (user < maxima)
+                            {
+                                maxima = user;
+                            }
+                            tentativas = tentativas - 1;
+                            pontos = pontos - 100;
+                            if (tentativas >= 1)
+                            {
+                                Console.WriteLine("O numero procurado é inferior!Tens {0} e {1} tentativas restantes.", pontos, tentativas);
+                                Console.WriteLine("O numero que o computador escolheu está entre os números {0} e {1}", minima, maxima);
+                                Console.WriteLine();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Perdeste , o numero certo era " + com);
+                                Console.WriteLine();
+                            }
                         }
                         else
                         {
-                            Console.WriteLine("Perdeste , o numero certo era {0}", com);
-                            Console.WriteLine();
-                            Console.ReadLine();
+                            if (user > minima)
+                            {
+                                minima = user;
+                            }
+                            tentativas = tentativas - 1;
+                            pontos = pontos - 100;
+                            if (tentativas >= 1)
+                            {
+                                Console.WriteLine("O numero procurado é maior!!!Tens {0} e {1} tentativas restantes.", pontos, tentativas);
+                                Console.WriteLine("O numero que o computador escolheu está entre os números {0} e {1}", minima, maxima);
+                                Console.WriteLine();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Perdeste , o numero certo era {0}", com);
+                                Console.WriteLine();
+                            }
                         }
                     }
-                }
+                } while (tentativas > 0 || user != com);
             }
         }
     }
