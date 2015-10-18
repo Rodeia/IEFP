@@ -22,11 +22,8 @@ namespace Aula01
             Console.WriteLine();
             Console.Write("#Aposta> ");
         Start:
-            if (tentativas > 0)
-            {
-                do
+                while(tentativas > 0)
                 {
-                    do
                     {
                         if (aux == true)
                         {
@@ -56,13 +53,15 @@ namespace Aula01
                             Console.WriteLine();
                             Console.Write("Carrega ENTER para terminar o jogo.");
                             Console.ReadKey();
-                    }
+                            tentativas = tentativas - 10;
+                }
                     else if (user == com)
                     {
                         Console.WriteLine("Ganhaste Com {0} pontos e {1} tentativas restantes!", pontos, tentativas);
                         Console.WriteLine();
                         Console.Write("Carrega ENTER para terminar o jogo.");
                         Console.ReadKey();
+                        tentativas = tentativas - 10;
                     }
                     else
                     {
@@ -137,8 +136,7 @@ namespace Aula01
                             }
                         }
                     }
-                } while (user != com || tentativas < 0);
-            }
+                }
         }
     }
 }
