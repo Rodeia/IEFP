@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 
 namespace Aula01
 {
@@ -11,7 +10,6 @@ namespace Aula01
             Console.Clear();
             Random aleatorio = new Random();
             int com = aleatorio.Next(1, 1000);
-            Console.WriteLine(com);
             int pontos = 1000;
             int tentativas = 10;
             long maxima = 1000;
