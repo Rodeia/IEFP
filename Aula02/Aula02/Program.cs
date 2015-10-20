@@ -24,6 +24,7 @@ namespace Aula02
         {
             string repetir;
             do {
+                    Console.Clear();
                     Console.WriteLine ("\n1 - soma");
                     Console.WriteLine ("2 - Subtrção");
                     Console.WriteLine ("3 - Multiplicação");
